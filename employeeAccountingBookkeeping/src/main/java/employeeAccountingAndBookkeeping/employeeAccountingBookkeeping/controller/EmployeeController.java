@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("/employees" )
+@RequestMapping("/employees")
 public class EmployeeController {
     private final EmployeeService employeeService;
 
@@ -20,18 +20,21 @@ public class EmployeeController {
 
     @GetMapping(path = "/add")
     public Employee add(@RequestParam String firstName, @RequestParam String secondName) {
-        return employeeService.add(firstName,secondName);
+        return employeeService.add(firstName, secondName);
     }
+
     @GetMapping(path = "/remove")
     public Employee remove(@RequestParam String firstName, @RequestParam String secondName) {
-        return employeeService.remove(firstName,secondName);
+        return employeeService.remove(firstName, secondName);
     }
+
     @GetMapping(path = "/find")
     public Employee find(@RequestParam String firstName, @RequestParam String secondName) {
-        return employeeService.find(firstName,secondName);
+        return employeeService.find(firstName, secondName);
     }
+
     @GetMapping
-    public Collection <Employee> findAll() {
+    public Collection<Employee> findAll() {
         return employeeService.findAll();
     }
 }

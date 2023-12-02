@@ -18,7 +18,7 @@ public class Employee {
     public String getSecondName() {
         return secondName;
     }
-
+    public String getFullName(){ return firstName+" "+secondName;}
 
 
     @Override
